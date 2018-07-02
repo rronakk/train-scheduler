@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Train Scheduler</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+
+    <script src="assets/js/app.js" async></script>
+  </head>
+  <body>
+        <div class="jumbotron">
+            <h1 class="display-3">Train Scheduler<img src="assets/img/train1.gif" class="header-img"></h1>
+    </div>
+    <div class="card container">
+    </div>
+    <div class="card container">
+        <div class="card-header">
+                <h3>Current Train Schedule</h3>
+        </div>
+        <div class="card-body">
+         
+            <table class="table train-schedule table-striped ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div >
+                <button type="button" class="btn-info btn-block" data-toggle="modal" data-backdrop="static" data-target="#modelId">
+                        Add New Train
+                </button>
+            </div>
+        </div>      
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modelTitleId">Add Train</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Train New Name*</label>
+                              <input type="text" class="form-control" id="train-name" placeholder="Name of your train" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Destination*</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Destination Station" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">First Train Time (HH:MM)*</label>
+                                <input type="time" class="form-control" id="f-train-time" placeholder="Time when first train arrives" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Frequency (Minutes)* </label>
+                                <input type="text" class="form-control" id="frequency" placeholder="Frequency of the Train" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button " class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button submit" class="btn btn-info" id="save-btn">Save</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>

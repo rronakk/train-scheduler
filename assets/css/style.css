@@ -1,0 +1,17 @@
+body{
+    background-image: url("../img/noisy.png");
+
+}
+.jumbotron {
+    padding: 0px 10px;
+    background-color: white;
+    color: grey;
+}
+
+.header-img{
+    height: 120px;
+}
+button{
+    cursor: pointer;
+
+}
